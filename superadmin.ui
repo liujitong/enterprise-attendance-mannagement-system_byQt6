@@ -24,10 +24,10 @@
    <widget class="QTableWidget" name="ALL">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>70</y>
-      <width>561</width>
-      <height>381</height>
+      <x>160</x>
+      <y>40</y>
+      <width>571</width>
+      <height>401</height>
      </rect>
     </property>
     <property name="rowCount">
@@ -42,13 +42,13 @@
     <column/>
     <column/>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>20</y>
-      <width>201</width>
-      <height>21</height>
+      <x>280</x>
+      <y>0</y>
+      <width>281</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="html">
@@ -59,20 +59,7 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;数据一览表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>查询所有</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;员工数据一览表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
@@ -99,7 +86,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="title">
      <string>员工管理</string>
     </property>
-    <addaction name="actionchaneg_De"/>
+    <widget class="QMenu" name="menu_5">
+     <property name="title">
+      <string>员工部门管理</string>
+     </property>
+     <addaction name="actions1"/>
+     <addaction name="actionS2"/>
+    </widget>
+    <addaction name="menu_5"/>
     <addaction name="actionreanew"/>
     <addaction name="actionexit"/>
     <addaction name="actionedit"/>
@@ -146,12 +140,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="actionREANEWACC">
    <property name="text">
-    <string>账号注册</string>
-   </property>
-  </action>
-  <action name="actionchaneg_De">
-   <property name="text">
-    <string>部门调换</string>
+    <string>普通员工账号注册</string>
    </property>
   </action>
   <action name="actionde">
@@ -177,6 +166,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="actionedit">
    <property name="text">
     <string>员工信息修改</string>
+   </property>
+  </action>
+  <action name="actions1">
+   <property name="text">
+    <string>员工部门分配</string>
+   </property>
+  </action>
+  <action name="actionS2">
+   <property name="text">
+    <string>员工部门调换</string>
    </property>
   </action>
  </widget>

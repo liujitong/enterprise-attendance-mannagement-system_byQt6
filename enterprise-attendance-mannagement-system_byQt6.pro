@@ -12,15 +12,21 @@ SOURCES += \
     login.cpp \
     main.cpp \
     publicdb.cpp \
+    resi.cpp \
+    resi_superadmin.cpp \
     superadmin.cpp
 
 HEADERS += \
     login.h \
     publicdb.h \
+    resi.h \
+    resi_superadmin.h \
     superadmin.h
 
 FORMS += \
     login.ui \
+    resi.ui \
+    resi_superadmin.ui \
     superadmin.ui
 
 # Default rules for deployment.

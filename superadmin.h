@@ -15,12 +15,15 @@ public:
     explicit superadmin(QWidget *parent = nullptr);
     void superadminset(QString eno);
     ~superadmin();
-
+    void tableset();//设置表
+    void treeset();//设置树
 private slots:
-    void on_pushButton_clicked();
-
+    void department_set();
+    void re_new_pr();
+    void open_resi_superadmin();
 private:
     Ui::superadmin *ui;
 };
+
 
 #endif // SUPERADMIN_H

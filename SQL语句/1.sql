@@ -43,3 +43,5 @@ ALTER TABLE department DROP CONSTRAINT dnamecheck;
 --dno长度为3
 ALTER TABLE department ADD CONSTRAINT dnocheck
 CHECK (len(dno)=3);
+
+INSERT INTO account VALUES('%1','%2','2');

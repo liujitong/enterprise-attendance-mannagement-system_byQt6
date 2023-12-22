@@ -5,7 +5,8 @@
 #include "publicdb.h"
 #include <QApplication>
 #include <QDebug>
-#include "superadmin.h""
+#include "superadmin.h"
+#include "resi.h"
 login::login(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::login)
@@ -37,7 +38,7 @@ void login::on_pushButton_clicked()
         if(sqltext.value(0).toString()=="0")
         {
         //超级管理员界面
-            superadmin *spa=new superadmin();
+        superadmin *spa=new superadmin();
         spa->superadminset(eno);
         spa->show();
         }
@@ -57,6 +58,7 @@ void login::on_pushButton_clicked()
 
 void login::on_pushButton_2_clicked()
 {
-
+    resi *reg=new resi();
+    reg->show();
 }
 

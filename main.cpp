@@ -16,9 +16,8 @@ bool OpenDatabase()
                                ).arg("127.0.0.1,1433")//默认的sqlserver的端口号是1433
                            .arg("EAS_qt")
                            .arg("EAS_ADMIN")
-                           .arg("liujitong0")//填写你的sa账号的密码！！！！！！！！！！！！
+                           .arg("liujitong0")
                        );
-
     if(!db.open())                                      //打开数据库
     {
         qDebug()<<db.lastError().text();
@@ -40,6 +39,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     login *ld=new login();
     ld->show();
-    db.close();
     return a.exec();
 }
