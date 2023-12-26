@@ -39,8 +39,10 @@ void login::on_pushButton_clicked()
         {
         //超级管理员界面
         superadmin *spa=new superadmin();
-        spa->superadminset(eno);
+        spa->eno=eno;
+        spa->superadminset();
         spa->show();
+        this->destroy();
         }
         if(sqltext.value(0).toString()=="1")
         {

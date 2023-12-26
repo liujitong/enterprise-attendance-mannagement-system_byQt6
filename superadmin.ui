@@ -21,27 +21,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QTableWidget" name="ALL">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>40</y>
-      <width>571</width>
-      <height>401</height>
-     </rect>
-    </property>
-    <property name="rowCount">
-     <number>0</number>
-    </property>
-    <property name="columnCount">
-     <number>5</number>
-    </property>
-    <column/>
-    <column/>
-    <column/>
-    <column/>
-    <column/>
-   </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
@@ -62,6 +41,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;员工数据一览表&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="ALL">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>40</y>
+      <width>471</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>0</number>
+    </property>
+    <property name="columnCount">
+     <number>5</number>
+    </property>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+    <column/>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
@@ -80,7 +80,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="actionss"/>
-    <addaction name="actionADMINSET"/>
+    <addaction name="actionset"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -91,12 +91,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>员工部门管理</string>
      </property>
      <addaction name="actions1"/>
-     <addaction name="actionS2"/>
+     <addaction name="actions2"/>
     </widget>
     <addaction name="menu_5"/>
     <addaction name="actionreanew"/>
-    <addaction name="actionexit"/>
-    <addaction name="actionedit"/>
+    <addaction name="actionedit_2"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -119,18 +118,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </widget>
   <action name="actionss">
    <property name="text">
-    <string>部门设置</string>
+    <string>注册新部门</string>
    </property>
    <property name="iconText">
-    <string>部门设置</string>
+    <string>注册新部门</string>
    </property>
    <property name="toolTip">
-    <string>部门设置</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新建部门&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </action>
-  <action name="actionADMINSET">
+  <action name="actionset">
    <property name="text">
-    <string>部门管理员设置</string>
+    <string>部门信息</string>
+   </property>
+   <property name="toolTip">
+    <string>部门信息</string>
    </property>
   </action>
   <action name="actionRESi">
@@ -165,7 +167,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="actionedit">
    <property name="text">
-    <string>员工信息修改</string>
+    <string>员工信息</string>
    </property>
   </action>
   <action name="actions1">
@@ -173,9 +175,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>员工部门分配</string>
    </property>
   </action>
-  <action name="actionS2">
+  <action name="actions2">
    <property name="text">
     <string>员工部门调换</string>
+   </property>
+  </action>
+  <action name="actionedit_2">
+   <property name="text">
+    <string>员工信息</string>
    </property>
   </action>
  </widget>

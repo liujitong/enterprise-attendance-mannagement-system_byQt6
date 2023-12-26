@@ -9,6 +9,12 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    dep_change.cpp \
+    dep_fenpei.cpp \
+    department_set.cpp \
+    depm.cpp \
+    empl.cpp \
+    employee_set.cpp \
     login.cpp \
     main.cpp \
     publicdb.cpp \
@@ -17,6 +23,12 @@ SOURCES += \
     superadmin.cpp
 
 HEADERS += \
+    dep_change.h \
+    dep_fenpei.h \
+    department_set.h \
+    depm.h \
+    empl.h \
+    employee_set.h \
     login.h \
     publicdb.h \
     resi.h \
@@ -24,6 +36,12 @@ HEADERS += \
     superadmin.h
 
 FORMS += \
+    dep_change.ui \
+    dep_fenpei.ui \
+    department_set.ui \
+    depm.ui \
+    empl.ui \
+    employee_set.ui \
     login.ui \
     resi.ui \
     resi_superadmin.ui \

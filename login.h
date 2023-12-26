@@ -12,6 +12,7 @@ class login : public QWidget
     Q_OBJECT
 
 public:
+    void combox_emp_set();
     explicit login(QWidget *parent = nullptr);
     ~login();
 
