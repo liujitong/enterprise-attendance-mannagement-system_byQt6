@@ -41,7 +41,17 @@ void department_set::on_pushButton_clicked()
         if(query.exec(QString("INSERT INTO department VALUES('%1','%2','%3','%4')").arg(ui->did->text()).arg(ui->dname->text()).arg(ui->comboBox->currentText().left(5)).arg(other)))
         {
             QMessageBox::information(this,"创建成功","SUCCESSFUL");
-            qu2.exec(QString("UPDATE employee SET dno='%1' WHERE eno='%2'").arg(ui->did->text()).arg(ui->comboBox->currentText().left(5)));//给部门设置成为管理的部门
+            ui->did->clear();
+            ui->dname->clear();
+            ui->Other->clear();
+            ui->comboBox->clear();
+            //设置复选框
+            QSqlQuery query(db);
+            query.exec("SELECT ename,employee.eno from employee ,account where account.eno=employee.eno and (account.type=2) ");
+            while(query.next())
+            {
+                ui->comboBox->addItem(query.value(1).toString()+" "+query.value(0).toString());
+            }
             qu3.exec(QString("UPDATE account SET type=1 WHERE eno='%1'").arg(ui->comboBox->currentText().left(5)));//更新账户类别
         }
         else

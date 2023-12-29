@@ -26,6 +26,7 @@ private slots:
     void open_dep_fenpei();
     void open_dep_change();
     void open_emp_set();
+    void open_empl();
 private:
     Ui::superadmin *ui;
 };

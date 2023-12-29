@@ -1,8 +1,10 @@
 #include "login.h"
 #include "ui_login.h"
+#include "dep_admin.h"
 #include<QString>
 #include<QMessageBox>
 #include "publicdb.h"
+#include "common_em.h"
 #include <QApplication>
 #include <QDebug>
 #include "superadmin.h"
@@ -37,21 +39,30 @@ void login::on_pushButton_clicked()
         QMessageBox::information(this,"登录情况","登录成功");//后接管理界面
         if(sqltext.value(0).toString()=="0")
         {
-        //超级管理员界面
-        superadmin *spa=new superadmin();
-        spa->eno=eno;
-        spa->superadminset();
-        spa->show();
-        this->destroy();
+            //超级管理员界面
+            superadmin *spa=new superadmin();
+            spa->eno=ui->eno->text();
+            spa->superadminset();
+            spa->show();
+            this->close();
         }
         if(sqltext.value(0).toString()=="1")
         {
-        //部门管理员界面
-
+            //部门管理员界面
+            dep_admin *dpc=new dep_admin();
+            dpc->eno=eno;
+            dpc->setupfirst();
+            dpc->show();
+            this->close();
         }
         if(sqltext.value(0).toString()=="2")
         {
         //员工界面
+            common_em *ce=new common_em();
+            ce->eno=ui->eno->text();
+            ce->tableset();
+            ce->show();
+            this->close();
         }
     }
     else

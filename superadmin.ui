@@ -101,8 +101,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="title">
      <string>考勤管理</string>
     </property>
-    <addaction name="actionde"/>
-    <addaction name="actionperson"/>
    </widget>
    <widget class="QMenu" name="menu_4">
     <property name="title">

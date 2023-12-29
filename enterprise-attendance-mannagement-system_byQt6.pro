@@ -9,6 +9,8 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    common_em.cpp \
+    dep_admin.cpp \
     dep_change.cpp \
     dep_fenpei.cpp \
     department_set.cpp \
@@ -23,6 +25,8 @@ SOURCES += \
     superadmin.cpp
 
 HEADERS += \
+    common_em.h \
+    dep_admin.h \
     dep_change.h \
     dep_fenpei.h \
     department_set.h \
@@ -36,6 +40,8 @@ HEADERS += \
     superadmin.h
 
 FORMS += \
+    common_em.ui \
+    dep_admin.ui \
     dep_change.ui \
     dep_fenpei.ui \
     department_set.ui \

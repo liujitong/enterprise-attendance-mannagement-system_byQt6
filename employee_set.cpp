@@ -33,7 +33,7 @@ employee_set::~employee_set()
 
 void employee_set::on_pushButton_clicked()
 {
-    QSqlQuery query(db),qu1(db),qu2(db),qu3(db);
+    QSqlQuery query(db),qu1(db);
     static QRegularExpression enostd( "[0-9]{5}" );//设置正则表达式-部门账号
     static QRegularExpression enamestd("(!(%[^吖-座]%))||[^a-z]%|[^A-Z]%");
     static QRegularExpression etelstd("[0-9]{11,12}");

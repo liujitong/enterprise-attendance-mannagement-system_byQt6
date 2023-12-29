@@ -8,6 +8,7 @@
 #include "dep_fenpei.h"
 #include "dep_change.h"
 #include "depm.h"
+#include "empl.h"
 #include "QDebug"
 superadmin::superadmin(QWidget *parent) :
     QMainWindow(parent),
@@ -23,6 +24,7 @@ superadmin::superadmin(QWidget *parent) :
     connect(ui->actions1,SIGNAL(triggered()),this,SLOT(open_dep_fenpei()));//员工部门分配窗口的槽函数
     connect(ui->actions2,SIGNAL(triggered()),this,SLOT(open_dep_change()));//员工部门调换窗口
     connect(ui->actionreanew,SIGNAL(triggered()),this,SLOT(open_emp_set()));//员工注册窗口
+    connect(ui->actionedit_2,SIGNAL(triggered()),this,SLOT(open_empl()));//员工查看窗口
 }
 void superadmin::treeset()//设置tree
 {
@@ -100,4 +102,9 @@ void superadmin::open_emp_set()
 {
     employee_set *emp=new employee_set();
     emp->show();
+}
+void superadmin::open_empl()
+{
+    empl *empl1=new empl();
+    empl1->show();
 }

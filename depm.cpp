@@ -81,7 +81,7 @@ void depm::on_conf_edit_clicked()
     {
         QMessageBox::information(this,"修改成功","SUCCESSFUL");
         //将标签设置为部门管理员
-        qu3.exec(QString("UPDATE account SET type='1' WHERE eno='%1'").arg(ui->ID->currentText()));
+        qu3.exec(QString("UPDATE account SET type='1' WHERE eno='%1'").arg(ui->ADMIN->currentText().left(5)));
         //将此成员设置为本部门成员
         tableset();
         comboxset();
