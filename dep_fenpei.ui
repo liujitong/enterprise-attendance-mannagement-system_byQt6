@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>员工部门分配</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/dep.png</normaloff>:/new/prefix1/icons/dep.png</iconset>
   </property>
   <layout class="QFormLayout" name="formLayout_2">
    <item row="0" column="1">
@@ -86,6 +90,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>

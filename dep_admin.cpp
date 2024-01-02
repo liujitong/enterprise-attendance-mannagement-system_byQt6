@@ -2,13 +2,14 @@
 #include "ui_dep_admin.h"
 #include "publicdb.h"
 #include "QMessageBox"
-#include "qdebug.h"
+#include "pss_change.h"
 int flagc=0;
 dep_admin::dep_admin(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::dep_admin)
 {
     ui->setupUi(this);
+    QObject::connect(ui->actioncode,SIGNAL(triggered()),this,SLOT(open_change_pss()));
 }
 dep_admin::~dep_admin()
 {
@@ -45,6 +46,16 @@ void dep_admin::setupfirst()
             ui->tableWidget->setItem(row,column,item);
         }
         row++;
+    }
+    //将标题设置为xx部门管理员窗口
+    qu3.exec(QString("SELECT dname FROM department WHERE dno='%1'").arg(dno));
+    if(qu3.first())
+    {
+        this->setWindowTitle(qu3.value(0).toString()+"部门管理员窗口");
+    }
+    else
+    {
+        this->setWindowTitle("部门管理员窗口");
     }
 }
 
@@ -214,3 +225,14 @@ void dep_admin::on_pushButton_3_clicked()
     }
 }
 
+void dep_admin::open_change_pss()
+{
+    pss_change *pss=new pss_change();
+    pss->eno=eno;
+    pss->show();
+}
+void dep_admin::closeEvent(QCloseEvent *event)
+{
+    event->accept();
+    db.close();
+}

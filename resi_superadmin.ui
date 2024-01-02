@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>超级管理员注册</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/resi.png</normaloff>:/new/prefix1/icons/resi.png</iconset>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -71,7 +75,9 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pushButton</sender>

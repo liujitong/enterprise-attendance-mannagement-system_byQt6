@@ -1,12 +1,10 @@
 #include "login.h"
 #include "ui_login.h"
 #include "dep_admin.h"
-#include<QString>
-#include<QMessageBox>
+#include <QString>
+#include <QMessageBox>
 #include "publicdb.h"
 #include "common_em.h"
-#include <QApplication>
-#include <QDebug>
 #include "superadmin.h"
 #include "resi.h"
 login::login(QWidget *parent) :
@@ -60,6 +58,7 @@ void login::on_pushButton_clicked()
         //员工界面
             common_em *ce=new common_em();
             ce->eno=ui->eno->text();
+            ce->setupfirst();
             ce->tableset();
             ce->show();
             this->close();

@@ -14,6 +14,7 @@ dep_fenpei::dep_fenpei(QWidget *parent)
 //表的初始化
 void dep_fenpei::tableset()
 {
+    ui->inf_table->clear();
     ui->inf_table->setHorizontalHeaderLabels({"姓名","编号"});
     QSqlQuery query(db);
     query.exec("SELECT eno,ename FROM employee WHERE dno IS NULL;");
@@ -65,9 +66,9 @@ void dep_fenpei::on_pushButton_clicked()
 
     if(query.exec(QString("UPDATE employee SET dno='%1' WHERE eno='%2'").arg(ui->dep->currentText().left(3)).arg(ui->emp->currentText().left(5))))
     {
-        QMessageBox::information(this,"修改成功","Successful");
         combox_emp_set();
         tableset();
+        QMessageBox::information(this,"修改成功","Successful");
     }
     else
     {

@@ -2,7 +2,7 @@
 #define DEP_ADMIN_H
 
 #include <QMainWindow>
-
+#include<QCloseEvent>
 namespace Ui {
 class dep_admin;
 }
@@ -15,6 +15,7 @@ public:
     QString eno;
     QString dno;
     void setupfirst();
+    void closeEvent(QCloseEvent *e);
     explicit dep_admin(QWidget *parent = nullptr);
     ~dep_admin();
 
@@ -32,6 +33,7 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
+    void open_change_pss();
 
 private:
     Ui::dep_admin *ui;

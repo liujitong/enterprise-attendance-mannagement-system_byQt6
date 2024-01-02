@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>部门管理</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/dep.png</normaloff>:/new/prefix1/icons/dep.png</iconset>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -150,6 +154,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>

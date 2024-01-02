@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>623</width>
+    <height>404</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>企业考勤管理系统</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/icon_login_input_password.png</normaloff>:/new/prefix1/icons/icon_login_input_password.png</iconset>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -29,14 +33,14 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>200</x>
      <y>80</y>
      <width>271</width>
      <height>131</height>
     </rect>
    </property>
    <property name="title">
-    <string>登录系统</string>
+    <string>企业考勤管理系统</string>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -91,8 +95,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>230</y>
+     <x>400</x>
+     <y>250</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -104,8 +108,8 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>230</y>
+     <x>110</x>
+     <y>250</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -115,6 +119,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>

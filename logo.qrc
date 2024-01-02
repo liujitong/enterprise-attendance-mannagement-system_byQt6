@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icons/admin.png</file>
+        <file>icons/check.png</file>
+        <file>icons/error.png</file>
+        <file>icons/question.png</file>
+        <file>icons/up.png</file>
+        <file>icons/warn.png</file>
+        <file>icons/dep.png</file>
+        <file>icons/em.png</file>
+        <file>icons/icon_login_input_password.png</file>
+        <file>icons/resi.png</file>
+        <file>icons/sign.png</file>
+        <file>icons/time-management-.png</file>
+        <file>icons/pss.png</file>
+    </qresource>
+</RCC>

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>新员工注册</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/resi.png</normaloff>:/new/prefix1/icons/resi.png</iconset>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
@@ -112,7 +116,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pushButton_2</sender>

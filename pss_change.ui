@@ -1,95 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>dep_change</class>
- <widget class="QDialog" name="dep_change">
+ <class>pss_change</class>
+ <widget class="QWidget" name="pss_change">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>662</width>
-    <height>277</height>
+    <width>332</width>
+    <height>187</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>员工部门调换</string>
+   <string>密码修改</string>
   </property>
   <property name="windowIcon">
    <iconset resource="logo.qrc">
-    <normaloff>:/new/prefix1/icons/em.png</normaloff>:/new/prefix1/icons/em.png</iconset>
+    <normaloff>:/new/prefix1/icons/pss.png</normaloff>:/new/prefix1/icons/pss.png</iconset>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>员工部门信息表</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTableWidget" name="inf_table">
-       <property name="rowCount">
-        <number>0</number>
-       </property>
-       <property name="columnCount">
-        <number>4</number>
-       </property>
-       <column/>
-       <column/>
-       <column/>
-       <column/>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
-        <string>部门调换</string>
+        <string>密码修改</string>
        </property>
        <layout class="QFormLayout" name="formLayout">
         <item row="0" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>员工：</string>
+           <string>旧密码</string>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QComboBox" name="emp"/>
+         <widget class="QLineEdit" name="old_pss"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>部门:</string>
+           <string>新密码</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QComboBox" name="dep"/>
+         <widget class="QLineEdit" name="pss_new"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>确认新密码</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="pss_new_2"/>
         </item>
        </layout>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
         <widget class="QPushButton" name="pushButton">
          <property name="text">
-          <string>确认</string>
+          <string>取消</string>
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="confirm">
          <property name="text">
-          <string>取消</string>
+          <string>确认</string>
          </property>
         </widget>
        </item>
@@ -104,18 +86,18 @@
  </resources>
  <connections>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>dep_change</receiver>
+   <receiver>pss_change</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>460</x>
-     <y>215</y>
+     <x>69</x>
+     <y>34</y>
     </hint>
     <hint type="destinationlabel">
-     <x>255</x>
-     <y>146</y>
+     <x>177</x>
+     <y>97</y>
     </hint>
    </hints>
   </connection>

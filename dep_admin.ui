@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>部门管理员窗口</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/time-management-.png</normaloff>:/new/prefix1/icons/time-management-.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
@@ -196,12 +200,26 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menudsad">
+    <property name="title">
+     <string>账户管理</string>
+    </property>
+    <addaction name="actioncode"/>
+   </widget>
+   <addaction name="menudsad"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actioncode">
+   <property name="text">
+    <string>修改本账户密码</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>

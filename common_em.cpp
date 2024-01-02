@@ -1,6 +1,7 @@
 #include "common_em.h"
 #include "ui_common_em.h"
 #include "QMessageBox"
+#include "pss_change.h"
 #include "publicdb.h"
 int flag=0;//0->啥也没选中，1->蛇牙
 common_em::common_em(QWidget *parent)
@@ -11,8 +12,24 @@ common_em::common_em(QWidget *parent)
     ui->lineEdit->setEnabled(false);
     ui->dateEdit->setDate(QDate::currentDate());
     ui->dateEdit_2->setDate(QDate::currentDate());
+    QObject::connect(ui->actioncode,SIGNAL(triggered()),this,SLOT(open_change_pss()));//更改密码
 }
+void common_em::setupfirst()
+{
+    //设置标题为xx部的xx的员工窗口
+    QSqlQuery qu(db),qu2(db);
+    qu.exec(QString("SELECT ename FROM employee WHERE eno='%1'").arg(eno));
+    qu2.exec(QString("SELECT dname FROM department WHERE dno=(SELECT dno FROM employee WHERE ename='%1')").arg(eno));
+    if(qu.first()&&qu2.first())
+    {
 
+        this->setWindowTitle(qu2.value(0).toString()+"部的"+qu.value(0).toString()+"的员工窗口");
+    }
+    else
+    {
+        this->setWindowTitle(qu.value(0).toString()+"的员工窗口");
+    }
+}
 void common_em::tableset()//设置table
 {
     QSqlQuery query(db),qu2(db);
@@ -170,4 +187,15 @@ void common_em::on_sea_all_clicked()
 {
     tableset();
 }
+void  common_em::open_change_pss()
+{
+    pss_change *pss=new pss_change();
+    pss->eno=eno;
+    pss->show();
+}
 
+void common_em::closeEvent(QCloseEvent *e)
+{
+    e->accept();
+    db.close();
+}

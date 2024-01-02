@@ -2,6 +2,7 @@
 #define SUPERADMIN_H
 
 #include <QMainWindow>
+#include <QCloseEvent>
 
 namespace Ui {
 class superadmin;
@@ -14,6 +15,7 @@ class superadmin : public QMainWindow
 public:
     QString eno;
     explicit superadmin(QWidget *parent = nullptr);
+     void closeEvent(QCloseEvent *e);
     void superadminset();
     ~superadmin();
     void tableset();//设置表
@@ -27,6 +29,9 @@ private slots:
     void open_dep_change();
     void open_emp_set();
     void open_empl();
+    void on_upadate_clicked();
+    void open_change_pss();
+
 private:
     Ui::superadmin *ui;
 };

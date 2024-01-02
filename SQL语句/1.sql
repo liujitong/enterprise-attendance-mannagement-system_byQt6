@@ -164,3 +164,5 @@ UPDATE attendance_sheet SET type='3',time='%1',other='%2' WHERE eno='%3'
 
 --删除考勤信息
 DELETE FROM attendance_sheet WHERE eno='%1' AND CONVERT(date, time)='%2'
+
+SELECT DISTINCT d.dno,d.dname FROM employee e LEFT JOIN department d ON e.dno = d.dno

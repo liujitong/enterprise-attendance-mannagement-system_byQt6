@@ -25,31 +25,29 @@ void empl::comboxset()
 void empl::combox_dep_set(QString a)
 {
     ui->dep->clear();
-    QSqlQuery query(db),qu2(db),qu3(db);
+    QSqlQuery query(db), qu2(db), qu3(db);
+    // 查询当前员工所在部门
     query.exec(QString("SELECT d.dno,d.dname FROM employee e LEFT JOIN department d ON e.dno = d.dno WHERE e.eno='%1'AND d.dno IS NOT NULL; ").arg(a));
-    if(query.first())
+    if (query.first())
     {
-        if(query.value(0).toString()!="")
-        ui->dep->addItem(query.value(0).toString()+" "+query.value(1).toString());
+        if (query.value(0).toString() != "")
+            ui->dep->addItem(query.value(0).toString() + " " + query.value(1).toString());
     }
+    // 查询其他可选部门
     qu2.exec(QString("SELECT DISTINCT d.dno, d.dname FROM employee e LEFT JOIN department d ON e.dno = d.dno WHERE (e.eno != '%1' OR e.dno IS NULL)  AND d.dno IS NOT NULL  AND e.eno <> '%1' AND d.dno NOT IN (SELECT dno FROM employee WHERE eno = '%1');").arg(a));
-    if(qu2.first())
+    while (qu2.next())
     {
-        if(qu2.value(0).toString()!="")
-        ui->dep->addItem(qu2.value(0).toString()+" "+qu2.value(1).toString());
-        while(qu2.next())
-        {
-            if(qu2.value(0).toString()!="")
-            ui->dep->addItem(qu2.value(0).toString()+" "+qu2.value(1).toString());
-        }
+        if (qu2.value(0).toString() != "")
+            ui->dep->addItem(qu2.value(0).toString() + " " + qu2.value(1).toString());
     }
-    else
+    // 如果没有其他可选部门，则显示所有部门
+    if (ui->dep->count() == 0)
     {
         qu3.exec("SELECT DISTINCT d.dno,d.dname FROM employee e LEFT JOIN department d ON e.dno = d.dno");
-        while(qu3.next())
+        while (qu3.next())
         {
-            if(qu3.value(0).toString()!="")
-            ui->dep->addItem(qu3.value(0).toString()+" "+qu3.value(1).toString());
+            if (qu3.value(0).toString() != "")
+                ui->dep->addItem(qu3.value(0).toString() + " " + qu3.value(1).toString());
         }
     }
 }
@@ -134,6 +132,8 @@ void empl::on_conf_edit_clicked()
         if(query.exec(QString("UPDATE employee SET ename='%1',dno='%2',gendar='%3',telephone='%4' WHERE eno='%5'").arg(ui->nameedit->text()).arg(ui->dep->currentText().left(3)).arg(ui->gen->currentText()).arg(ui->telephone->text()).arg(ui->eid->currentText())))
         {
             QMessageBox::information(this,"修改成功","Successful");
+            tableset();
+            comboxset();
         }
         else
         {

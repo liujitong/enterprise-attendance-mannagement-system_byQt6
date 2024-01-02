@@ -1,11 +1,11 @@
 #ifndef PUBLICDB_H
 #define PUBLICDB_H
-#include "qsqlerror.h"
-#include "qsqlrecord.h"
 #include <QSqlDatabase>
 #include <QSqlQuery>
-#include <QApplication>
+#include <QSqlRecord>
+#include <QSqlError>
 extern QSqlDatabase db;
+
 class publicdb
 {
 public:

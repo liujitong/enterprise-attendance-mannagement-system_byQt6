@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>普通员工账号注册系统</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="logo.qrc">
+    <normaloff>:/new/prefix1/icons/resi.png</normaloff>:/new/prefix1/icons/resi.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox">
@@ -81,7 +85,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pushButton</sender>

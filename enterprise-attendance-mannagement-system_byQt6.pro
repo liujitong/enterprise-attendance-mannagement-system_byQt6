@@ -19,6 +19,7 @@ SOURCES += \
     employee_set.cpp \
     login.cpp \
     main.cpp \
+    pss_change.cpp \
     publicdb.cpp \
     resi.cpp \
     resi_superadmin.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     empl.h \
     employee_set.h \
     login.h \
+    pss_change.h \
     publicdb.h \
     resi.h \
     resi_superadmin.h \
@@ -49,6 +51,7 @@ FORMS += \
     empl.ui \
     employee_set.ui \
     login.ui \
+    pss_change.ui \
     resi.ui \
     resi_superadmin.ui \
     superadmin.ui
@@ -57,3 +60,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    logo.qrc
