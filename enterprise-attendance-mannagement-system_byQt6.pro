@@ -1,4 +1,5 @@
 QT       += core gui sql
+RC_FILE = lgo.rc
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -63,3 +64,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     logo.qrc
+
+DISTFILES += \
+    lgo.rc
+

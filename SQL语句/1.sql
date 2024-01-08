@@ -108,7 +108,7 @@ UNION
 SELECT d.dno, d.dname
 FROM department d
 WHERE d.dno IN (SELECT dno FROM employee WHERE eno='00002') AND d.dno IS NULL; 
-
+GO
 --删除员工的时候，如果这个员工是部门管理员，则将其部门的管理员置为空
 CREATE TRIGGER delete_employee_admin_set_null
 ON employee
@@ -118,7 +118,7 @@ BEGIN
     UPDATE department SET dmano=NULL WHERE dmano=(SELECT eno FROM deleted);
     DELETE FROM account WHERE eno=(SELECT eno FROM deleted);
 END
-
+GO
 --删除员工的时候，如果他所在的部门只有他一个人，则将其部门删除
 CREATE TRIGGER delete_employee_delete_department
 ON employee
@@ -127,10 +127,12 @@ AS
 BEGIN
     DELETE FROM department WHERE dno=(SELECT dno FROM deleted) AND (SELECT COUNT(*) FROM employee WHERE dno=(SELECT dno FROM deleted))=0;
 END
+GO
 
 DELETE FROM employee WHERE eno='00045';
 
 --设置触发器，当建立部门的时候，将其管理员的员工表中的部门编号置为该部门的编号
+GO
 CREATE TRIGGER insert_department
 ON department
 FOR INSERT
@@ -138,6 +140,7 @@ AS
 BEGIN
     UPDATE employee SET dno=(SELECT dno FROM inserted) WHERE eno=(SELECT dmano FROM inserted);
 END
+GO
 INSERT INTO department VALUES('002','人事部','00002','NONE');
 
 --向签到表中插入数据，时间为当前时间，员工编号为%1

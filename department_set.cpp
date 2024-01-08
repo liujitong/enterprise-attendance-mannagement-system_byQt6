@@ -24,7 +24,7 @@ department_set::~department_set()
 
 void department_set::on_pushButton_clicked()
 {
-    QSqlQuery query(db),qu1(db),qu2(db),qu3(db);
+    QSqlQuery query(db),qu3(db);
     static QRegularExpression dnostd( "[0-9]{3}" );//设置正则表达式-部门账号
     static QRegularExpression dnamestd("[\u4e00-\u9fa5]+");
     if(!dnostd.match(ui->did->text()).hasMatch())
